@@ -1,0 +1,84 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+      
+      - name: Install lint dependencies
+        run: |
+          pip install wheel setuptools
+          pip install black==22.3.0 isort==5.10.1 flake8==4.0.1
+
+      - name: Lint the code
+        run: sh shell/lint.sh
+
+      - name: Install dependencies
+        run: |
+          pip install tensorflow==2.8.0
+          pip install "protobuf<=3.20" --force-reinstall
+
+      - name: Build wheel
+        run: python setup.py bdist_wheel
+
+      - name: Upload Python wheel
+        uses: actions/upload-artifact@v2
+        with:
+          name: Python wheel
+          path: ${{github.workspace}}/dist/t_loss-*.whl
+          if-no-files-found: error
+
+  test:
+    needs: build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      # max-parallel: 10
+      matrix:
+        os: [windows-2019, ubuntu-20.04, macos-11]
+        python-version: ["3.8", "3.9", "3.10"]
+        tf-version: [2.8, 2.13]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install wheel setuptools flake8 pytest-cov
+
+      - name: Install tensorflow-datasets
+        run: |
+          if [[ ${{ matrix.tf-version }} == 2.12 ]]; then
+            pip install tensorflow-datasets --upgrade
+          else
+            pip install tensorflow==${{ matrix.tf-version }} "tensorflow-datasets<=4.8.2"
+            pip install "protobuf<=3.20" --force-reinstall
+          fi
+        shell: bash
+
+      - name: Download artifact
+        uses: actions/download-artifact@master
+        with:
+          name: "Python wheel"
+
+      - name: Install wheel
+        run: pip install --find-links=${{github.workspace}} t_loss
+
+      - name: Test library accessibility
+        run: python -c "from t_loss import TLoss"
