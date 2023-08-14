@@ -1,5 +1,6 @@
-import tensorflow as tf
 import math
+
+import tensorflow as tf
 
 
 class TLoss(tf.keras.losses.Loss):
