@@ -14,7 +14,15 @@ class TLoss(tf.keras.losses.Loss):
             'sum': the output will be summed.
             name: Name of the loss function.
     """
-    def __init__(self, image_size: float = None, nu: float = 1.0, epsilon: float = 1e-8, reduction: str = "mean", name: str = "t_loss"
+
+    def __init__(
+        self,
+        image_size: float = None,
+        nu: float = 1.0,
+        epsilon: float = 1e-8,
+        reduction: str = "mean",
+        name: str = "t_loss",
+    ):
         super().__init__()
         self.image_size = image_size
         self.nu = nu
