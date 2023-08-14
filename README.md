@@ -1,5 +1,8 @@
 # t-loss-tf
 
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/andreped/t-loss-tf/workflows/tests/badge.svg)](https://github.com/andreped/t-loss-tf/actions)
+
 This repository contains the implementation of the T-Loss designed for semantic segmentation with TensorFlow backend.
 
 This implementation is a work in progress. Will make a release when it is finished. Stay tuned!
