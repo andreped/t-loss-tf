@@ -25,6 +25,9 @@ model.compile(loss=TLoss(image_size=512))
 [...]
 ```
 
+## License
+The code in this repository is released under [MIT License](https://github.com/andreped/t-loss-tf/blob/main/LICENSE).
+
 ## Citation
 The implementation is based on the original torch implementation hosted [here](https://github.com/Digital-Dermatology/t-loss).
 
@@ -38,6 +41,3 @@ Hence, if this code is used, please cite the original research article:
   year      = {2023},
 }
 ```
-
-## License
-The code in this repository is released under [MIT License](https://github.com/andreped/t-loss-tf/blob/main/LICENSE).
