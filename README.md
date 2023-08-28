@@ -12,6 +12,10 @@
 
 This repository contains the implementation of the T-Loss designed for semantic segmentation with TensorFlow backend.
 
+It is an adaption of the original PyTorch code [Digital-Dermatology/t-loss-loss](https://github.com/Digital-Dermatology/t-loss).
+
+More information about T-loss and the original paper can be found [here](https://robust-tloss.github.io/).
+
 ## Installation
 
 ```
