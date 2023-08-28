@@ -23,7 +23,9 @@ pip install git+https://github.com/andreped/t-loss-tf.git
 ## Usage
 As the t-loss contains a trainable parameter, in keras the loss needed to be implemented as a custom layer.
 Hence, instead of setting the loss as normally through `model.compile(loss=[...])`, just add it to the model
-at appropriate place. An example can be seen below:
+at an appropriate place (e.g., at the end of the network).
+
+An example can be seen below:
 
 ```python
 import tensorflow as tf
