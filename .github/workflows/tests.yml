@@ -78,7 +78,8 @@ jobs:
           name: "Python wheel"
 
       - name: Install wheel
-        run: pip install --find-links=${{github.workspace}} t_loss
+        run: pip install --find-links=${{github.workspace}} t_loss-*
+        shell: bash
 
       - name: Test library accessibility
         run: python -c "from t_loss import TLoss"
