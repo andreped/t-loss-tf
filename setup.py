@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="t-loss",
-    version="0.0.1",
+    version="0.1.0",
     author="André Pedersen",
     author_email="andrped94@gmail.com",
     description="Package for t-loss in tensorflow",
