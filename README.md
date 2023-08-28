@@ -12,10 +12,6 @@
 
 This repository contains the implementation of the T-Loss designed for semantic segmentation with TensorFlow backend.
 
-This implementation is a work in progress. Will make a release when it is finished. Stay tuned!
-
-Currently: The implementation seems to work mechanically but the returned loss values are strange.
-
 ## Installation
 
 ```
