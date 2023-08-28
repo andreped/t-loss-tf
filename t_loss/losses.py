@@ -7,7 +7,8 @@ class TLoss(tf.keras.layers.Layer):
     """
     Implementation of T-Loss in TensorFlow.
     Args:
-        image_size (float): Value of image/input size.
+        tensor_shape (float): Tuple describing the expected input shape, e.g., (512, 512, 1).
+        image_size (int): Value of image/input size.
         nu (float): Value of nu.
         epsilon (float): Value of epsilon.
         reduction_mode (str): Specifies the reduction to apply to the output: 'none' | 'mean' | 'sum'.
