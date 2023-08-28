@@ -4,3 +4,4 @@
 venv/
 build/
 *t_loss.egg-info/
+*test_model/
