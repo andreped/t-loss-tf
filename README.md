@@ -1,8 +1,14 @@
-# t-loss-tf
+<div align="center">
+<img src="./assets/tloss.gif" width="320">
+<h1 align="center">t-loss-tf</h1>
+<h3 align="center">Robust T-Loss for Medical Image Segmentation with TensorFlow backend</h3>
 
+[![GitHub Downloads](https://img.shields.io/github/downloads/andreped/t-loss-tf/total?label=GitHub%20downloads&logo=github)](https://github.com/andreped/t-loss-tf/releases)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/andreped/t-loss-tf/workflows/tests/badge.svg)](https://github.com/andreped/t-loss-tf/actions)
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+
+</div>
 
 This repository contains the implementation of the T-Loss designed for semantic segmentation with TensorFlow backend.
 
