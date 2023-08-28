@@ -82,3 +82,6 @@ jobs:
 
       - name: Test library accessibility
         run: python -c "from t_loss import TLoss"
+
+      - name: Run tests
+        run: pytest -v tests/
