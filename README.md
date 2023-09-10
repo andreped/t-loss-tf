@@ -14,13 +14,12 @@ This T-loss implementation is an adaption of the original PyTorch code [Digital-
 
 More information about T-loss and the original paper can be found [here](https://robust-tloss.github.io/).
 
-## Installation
-
+## [Installation](https://github.com/andreped/t-loss-tf#installation)
 ```
 pip install git+https://github.com/andreped/t-loss-tf.git
 ```
 
-## Usage
+## [Usage](https://github.com/andreped/t-loss-tf#usage)
 As the t-loss contains a trainable parameter, in keras the loss needed to be implemented as a custom layer.
 Hence, instead of setting the loss as normally through `model.compile(loss=[...])`, just add it to the model
 at an appropriate place (e.g., at the end of the network).
@@ -51,10 +50,10 @@ model.compile(optimizer="adam")
 model.fit(x=[x, y], y=y, batch_size=2, epochs=1, verbose="auto")
 ```
 
-## License
+## [License](https://github.com/andreped/t-loss-tf#license)
 The code in this repository is released under [MIT License](https://github.com/andreped/t-loss-tf/blob/main/LICENSE).
 
-## Citation
+## [Citation](https://github.com/andreped/t-loss-tf#citation)
 The implementation is based on the original torch implementation hosted [here](https://github.com/Digital-Dermatology/t-loss).
 
 Hence, if this code is used, please cite the original research article:
